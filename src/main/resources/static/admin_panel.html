@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="app">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Hello admin</title>
+</head>
+<body>
+    <a href="/admin_panel.html">Admin panel</a>
+    <a href="#!post">Post Management</a>
+    <a href="#!user"> User Management</a>
+    <a href="#!photo">Photo Management</a>
+
+    <div ng-view></div>
+
+
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="bower_components/angular-resource/angular-resource.js"></script>
+    <script type="text/javascript" src="js/app/app.js"></script>
+    <script type="text/javascript" src="js/app/admin/management/adminCfg.js"></script>
+    <script type="text/javascript" src="js/app/post/service/postService.js"></script>
+    <script type="text/javascript" src="js/app/admin/management/post/postManagementController.js"></script>
+
+</body>
+</html>
