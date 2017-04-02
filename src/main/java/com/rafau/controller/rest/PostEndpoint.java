@@ -46,7 +46,7 @@ public class PostEndpoint {
 
         Post PostToSave = postRepository.save(post);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()
-                .path("{/id}").buildAndExpand(PostToSave.getId())
+                .path("/{id}").buildAndExpand(PostToSave.getId())
                 .toUri();
 
         return ResponseEntity.created(location).body(post);
