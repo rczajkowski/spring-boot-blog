@@ -26,13 +26,18 @@ public class Post {
 
     private Date date;
 
+
+    @OneToMany(mappedBy = "post", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<Comment> comments;
+
     public Post() {
     }
 
-    public Post(String title, String content, Date date) {
+    public Post(String title, String content, Date date, List<Comment> comments) {
         this.title = title;
         this.content = content;
         this.date = date;
+        this.comments = comments;
     }
 
     public Integer getId() {
@@ -67,4 +72,11 @@ public class Post {
         this.date = date;
     }
 
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
+    }
 }
