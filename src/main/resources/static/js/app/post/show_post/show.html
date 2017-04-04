@@ -1,2 +1,11 @@
 <h1>{{showCtrl.post.title}}-{{showCtrl.post.date | date: 'medium'}}</h1>
 <h2>{{showCtrl.post.content}}</h2>
+
+
+<h1>Comments:</h1>
+<ul>
+    <li ng-repeat="c in showCtrl.comments">
+        by {{c.user.username}}
+        <p>{{c.content}}</p>
+    </li>
+</ul>

@@ -29,7 +29,7 @@ public class CommentEndpoint {
         return commentRepository.findAllByPostIdOrderByDateDesc(postId);
     }
 
-    @GetMapping("/api/{username}/comments")
+    @GetMapping("/api/users/{username}/comments")
     public List<Comment> getAllCommentsByUserId(@PathVariable String username){
         return commentRepository.findAllByUserUsernameOrderByDateDesc(username);
     }

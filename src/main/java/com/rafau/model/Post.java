@@ -1,5 +1,6 @@
 package com.rafau.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
@@ -27,6 +28,7 @@ public class Post {
     private Date date;
 
 
+    @JsonIgnore
     @OneToMany(mappedBy = "post", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Comment> comments;
 
