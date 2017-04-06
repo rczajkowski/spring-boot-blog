@@ -2,9 +2,9 @@
  * Created by rafau on 2017-03-27.
  */
 angular.module('app')
-    .constant('USER_ENDPOINT', '/api/users/:id')
+    .constant('USER_ENDPOINT', '/api/users/:username')
     .factory('User', function ($resource, USER_ENDPOINT) {
-        return $resource(USER_ENDPOINT, {id: "@id"},{
+        return $resource(USER_ENDPOINT, {username: "@username"},{
             update: {method: 'PUT'}
         });
     })
@@ -14,8 +14,8 @@ angular.module('app')
             return User.query();
         }
 
-        this.getUser = function (index) {
-            return User.get({id:index});
+        this.getUser = function (username) {
+            return User.get({username: username});
         }
 
         this.add = function (newUser) {
@@ -23,7 +23,7 @@ angular.module('app')
         }
 
         this.deleteOne = function (userToDelete) {
-            userToDelete.$delete({id: userToDelete.id});
+            userToDelete.$delete({username: userToDelete.username});
         }
 
         this.up = function (userToUpdate) {
