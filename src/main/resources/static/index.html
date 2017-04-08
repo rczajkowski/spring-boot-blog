@@ -7,6 +7,7 @@
 <body>
     <a href="#!list">Home</a>
     <a href="#!signup">Sign Up!</a>
+    <a href="#!login" ng-show="authenticated">Logout</a>
 
 
     <div ng-view></div>
@@ -19,5 +20,7 @@
     <script type="text/javascript" src="js/app/post/service/postService.js"></script>
     <script type="text/javascript" src="js/app/post/list/listController.js"></script>
     <script type="text/javascript" src="js/app/post/show_post/showController.js"></script>
+    <script type="text/javascript" src="js/app/authentication/authenticatationService.js"></script>
+    <script type="text/javascript" src="js/app/authentication/authenticationController.js"></script>
 </body>
 </html>

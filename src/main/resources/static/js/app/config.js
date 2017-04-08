@@ -22,6 +22,12 @@ angular.module('app')
             controllerAs: 'signUpCtrl'
         })
 
+        .when('/login', {
+            templateUrl: 'js/app/authentication/login.html',
+            controller: 'AuthenticationController',
+            controllerAs: 'authCtrl'
+        })
+
         .otherwise({
             redirectTo:'/list'
         });
