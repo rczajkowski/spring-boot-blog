@@ -1,10 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <title>Title</title>
-</head>
-<body>
+<form name="myForm">
+    <p>
+        Email<br>
+        <input name="emailInput" type="email" ng-model="email"  unique required>
+        unique email {{myForm.emailInput.$valid}}
+        <span ng-show="myForm.emailInput.$invalid && myForm.emailInput.$touched">
+            <span ng-show="myForm.emailInput.$error.required">email required</span>
+            <span ng-show="!myForm.emailInput.$error.unique">email already exists</span>
+        </span>
+    </p>
 
-</body>
-</html>
+    <p>
+        Username<br>
+        <input name="usernameInput" type="text" ng-model="username" required>
+        <span ng-show="myForm.usernameInput.$invalid && myForm.usernameInput.$touched">username required</span>
+    </p>
+
+    <p>
+        Password<br>
+        <input name="passwordInput" type="password" ng-model="password" required>
+        <span ng-show="myForm.passwordInput.$invalid && myForm.passwordInput.$touched">password required</span>
+    </p>
+
+    <button ng-disabled="myForm.emailInput.$invalid || myForm.usernameInput.$invalid || myForm.passwordInput.$invalid">
+        SIGN UP
+    </button>
+
+</form>
