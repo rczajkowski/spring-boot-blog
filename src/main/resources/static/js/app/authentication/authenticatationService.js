@@ -20,6 +20,6 @@ angular.module('app')
     
     this.logout = function (successCallback) {
         $http.post('/logout')
-            .then(successCallback);
+            .then(successCallback());
     }
 });

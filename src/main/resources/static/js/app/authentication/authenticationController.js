@@ -13,7 +13,7 @@ angular.module('app')
         }
 
         vm.login = function () {
-            AuthenticationService.authenticate(vm.credentials, loginSuccess());
+            AuthenticationService.authenticate(vm.credentials, loginSuccess);
         }
 
         var logoutSuccess = function () {
@@ -22,6 +22,6 @@ angular.module('app')
         }
 
         vm.logout = function () {
-            AuthenticationService.logout(logoutSuccess());
+            AuthenticationService.logout(logoutSuccess);
         }
     });

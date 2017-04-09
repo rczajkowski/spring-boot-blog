@@ -2,7 +2,10 @@
  * Created by rafau on 2017-03-16.
  */
 angular.module('app')
-.config(function ($routeProvider) {
+.config(function ($routeProvider, $httpProvider) {
+
+    $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
+
     $routeProvider
         .when('/list', {
             templateUrl: 'js/app/post/list/list.html',

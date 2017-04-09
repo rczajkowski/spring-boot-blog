@@ -5,6 +5,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 
 /**
@@ -19,9 +20,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
                 .csrf()
                     .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()).and()
                 .authorizeRequests()
-                    .antMatchers(HttpMethod.POST).authenticated().and()
-                .authorizeRequests().antMatchers("/admin_panel.html/**").hasRole("ADMIN").and().formLogin()
-                    .permitAll().and().csrf().disable();
+                    .antMatchers("/admin_panel.html").hasRole("ADMIN")
+                    .antMatchers(HttpMethod.POST).authenticated();
     }
 
     @Override
